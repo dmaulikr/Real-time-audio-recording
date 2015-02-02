@@ -1,0 +1,2 @@
+# AudioRecording
+- First Screen         -Login into the app using Facebook  - Second Screen         -Display some basic information that you pull from the facebook login in a list          - Have a button with text "Speak Here", clicking on which would start recording of the audio and then          - immediately in real-time output the recorded audio at an higher volume.         - (Optional):immediately display the audio frequency on screen
