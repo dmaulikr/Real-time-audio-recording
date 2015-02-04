@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "IosAudioController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface ViewController ()
 
@@ -35,4 +36,7 @@
 	[iosAudio stop];
 }
 
+- (IBAction)btnFacebookAction:(id)sender {
+
+}
 @end

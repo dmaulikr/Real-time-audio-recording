@@ -10,6 +10,12 @@
 
 @interface ViewController : UIViewController
 
+{
+    __weak IBOutlet UITextField *txtFirstName;
+    __weak IBOutlet UITextField *txtLastName;
+    __weak IBOutlet UITextField *txtEmailAddress;
+    
+}
 
 @end
 
