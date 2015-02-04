@@ -16,6 +16,8 @@
 
 @implementation ViewController
 
+#define KFacebookLoginErrorMessage @"Facebook Login Error"
+
 #pragma mark - View's life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,6 +60,7 @@
 }
 
 #pragma mark - User defined methods
+//Get user's info from facebook
 - (void)getUserFacebookBasicInfo
 {    
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -72,43 +75,41 @@
     }];
 }
 
+//Handle the facebook seesions' error
 - (void)handleError:(NSError *)error
 {
     NSString *alertText;
-    NSString *alertTitle;
     
     if ([FBErrorUtility shouldNotifyUserForError:error] == YES)
     {
-        alertTitle = NSLocalizedString(@"SignInViewFbLoginViewFacebookError", @"");
         alertText = [FBErrorUtility userMessageForError:error];
     } else
     {
         if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
-            alertTitle = NSLocalizedString(@"SignInViewFbLoginViewFacebookError", @"");
             alertText = [FBErrorUtility userMessageForError:error];
         } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
-            alertTitle = NSLocalizedString(@"SignInViewFbLoginViewSessionError", @"");
-            alertText = NSLocalizedString(@"SignInViewFbLoginViewSessionErrorMessage", @"");
+            alertText = @"There is some issue while creating session";
         } else {
             NSDictionary *errorInformation = [[[error.userInfo objectForKey:@"com.facebook.sdk:ParsedJSONResponseKey"] objectForKey:@"body"] objectForKey:@"error"];
             
-            alertTitle = NSLocalizedString(@"SignInViewFbLoginViewFacebookError", @"");
             NSString *alertMessage = NSLocalizedString(@"SignInViewFbLoginViewUnknownErrorMessage", @"");
             alertText = [NSString stringWithFormat:@"%@ : %@",alertMessage ,[errorInformation objectForKey:@"message"]];
         }
     }
     
-    [self showAlertWithTitle:alertTitle withMessage:alertText];
+    [self showAlertWithTitle:KFacebookLoginErrorMessage withMessage:alertText];
     // Clear token
     [FBSession.activeSession closeAndClearTokenInformation];
 }
 
+//Update the text field's values
 -(void)updateView:(NSMutableDictionary*)dictData {
     txtFirstName.text = [dictData valueForKey:@"first_name"];
     txtLastName.text = [dictData valueForKey:@"last_name"];
     txtEmailAddress.text = [dictData valueForKey:@"email"];
 }
 
+//Show the alert
 -(void)showAlertWithTitle:(NSString *)title withMessage:(NSString *)message{
     [[[UIAlertView alloc]initWithTitle:title
                                message:message
