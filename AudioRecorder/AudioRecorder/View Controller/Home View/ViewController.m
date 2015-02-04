@@ -87,6 +87,8 @@
     {
         if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
             alertText = [FBErrorUtility userMessageForError:error];
+            if (alertText == nil || [alertText isEqualToString:@""])
+                alertText = @"User cancelled the operation";
         } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
             alertText = @"There is some issue while creating session";
         } else {

@@ -31,9 +31,11 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="rCW-N3-JQx" secondAttribute="trailing" constant="75" id="2b3-Yb-E4C"/>
                                     <constraint firstItem="rCW-N3-JQx" firstAttribute="leading" secondItem="LWU-FC-Oj1" secondAttribute="leading" constant="75" id="5Fz-Lv-06s"/>
+                                    <constraint firstAttribute="centerY" secondItem="rCW-N3-JQx" secondAttribute="centerY" id="5ew-y2-qkV"/>
                                     <constraint firstAttribute="height" constant="60" id="D2A-ON-Vp1"/>
                                     <constraint firstAttribute="bottom" secondItem="rCW-N3-JQx" secondAttribute="bottom" constant="15" id="EPf-Ux-5Si"/>
                                     <constraint firstItem="rCW-N3-JQx" firstAttribute="top" secondItem="LWU-FC-Oj1" secondAttribute="top" constant="15" id="aMj-bJ-WNV"/>
+                                    <constraint firstAttribute="centerX" secondItem="rCW-N3-JQx" secondAttribute="centerX" id="uoK-OL-30C"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k5i-Ax-L0e" userLabel="Main View">
