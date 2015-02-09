@@ -10,6 +10,7 @@
 		41045C8F1A7FE22300483021 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41045C8E1A7FE22300483021 /* AppDelegate.m */; };
 		41045C931A7FE25E00483021 /* IosAudioController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41045C921A7FE25E00483021 /* IosAudioController.m */; };
 		41045C951A7FE2B200483021 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41045C941A7FE2B200483021 /* AudioToolbox.framework */; };
+		4180BFA21A8937E0000DE87C /* AudioRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4180BFA11A8937E0000DE87C /* AudioRecorderViewController.m */; };
 		41BB980E1A829E8A001AB9E9 /* btn_facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB980C1A829E8A001AB9E9 /* btn_facebook.png */; };
 		41BB980F1A829E8A001AB9E9 /* btn_facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 41BB980D1A829E8A001AB9E9 /* btn_facebook@2x.png */; };
 		41BB98111A82B62A001AB9E9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41BB98101A82B62A001AB9E9 /* FacebookSDK.framework */; };
@@ -39,6 +40,8 @@
 		41045C911A7FE25E00483021 /* IosAudioController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IosAudioController.h; sourceTree = "<group>"; };
 		41045C921A7FE25E00483021 /* IosAudioController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IosAudioController.m; sourceTree = "<group>"; };
 		41045C941A7FE2B200483021 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4180BFA01A8937E0000DE87C /* AudioRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioRecorderViewController.h; sourceTree = "<group>"; };
+		4180BFA11A8937E0000DE87C /* AudioRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioRecorderViewController.m; sourceTree = "<group>"; };
 		41BB980C1A829E8A001AB9E9 /* btn_facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_facebook.png; sourceTree = "<group>"; };
 		41BB980D1A829E8A001AB9E9 /* btn_facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_facebook@2x.png"; sourceTree = "<group>"; };
 		41BB98101A82B62A001AB9E9 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -93,6 +96,15 @@
 				41045C921A7FE25E00483021 /* IosAudioController.m */,
 			);
 			path = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		4180BF9F1A8937BD000DE87C /* Audio Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				4180BFA01A8937E0000DE87C /* AudioRecorderViewController.h */,
+				4180BFA11A8937E0000DE87C /* AudioRecorderViewController.m */,
+			);
+			path = "Audio Recorder";
 			sourceTree = "<group>";
 		};
 		41BB98071A829CF3001AB9E9 /* Resources */ = {
@@ -186,6 +198,7 @@
 		41E6CB801A7FD1B400AE997D /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4180BF9F1A8937BD000DE87C /* Audio Recorder */,
 				41E6CB811A7FD1B400AE997D /* Home View */,
 			);
 			path = "View Controller";
@@ -303,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4180BFA21A8937E0000DE87C /* AudioRecorderViewController.m in Sources */,
 				41045C931A7FE25E00483021 /* IosAudioController.m in Sources */,
 				41E6CB841A7FD1D100AE997D /* ViewController.m in Sources */,
 				41E6CB5D1A7FCFB000AE997D /* main.m in Sources */,
