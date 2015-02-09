@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self setUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -29,6 +30,25 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - User defined methods
+-(void)setUI
+{
+    
+    [txtFirstName setLeftViewMode:UITextFieldViewModeAlways];
+    [txtFirstName setLeftView: [self leftViewForTextFieldWithImage:@"username"]];
+    
+    [txtLastName setLeftViewMode:UITextFieldViewModeAlways];
+    [txtLastName setLeftView: [self leftViewForTextFieldWithImage:@"lock_white"]];
+    
+//    [btnLogin setBackgroundColor:[_DPFunctions colorWithR:36 g:164 b:193 alpha:1.0f]];
+//    [btnLogin.layer setCornerRadius:3.0f];
+//    
+//    [btnSignUp setBackgroundColor:[_DPFunctions colorWithR:49 g:190 b:218 alpha:1.0f]];
+//    [btnSignUp.layer setCornerRadius:3.0f];
+//    [btnSignUp.layer setBorderColor:[UIColor colorWithWhite:0.9f alpha:0.8f].CGColor];
+//    [btnSignUp.layer setBorderWidth:1.0f];
+
+}
 #pragma mark - IBAction methods
 - (IBAction)btnStartAction:(id)sender {
     [iosAudio start];
@@ -120,4 +140,15 @@
                      otherButtonTitles: nil] show];
 }
 
+#pragma mark - Helper methods
+- (UIImageView *)leftViewForTextFieldWithImage:(NSString *)imageName {
+    
+    UIImage *imageForLeftMode = [UIImage imageNamed:imageName];
+    
+    UIImageView *imgViewLeft = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 36, 36)];
+    [imgViewLeft setImage:imageForLeftMode];
+    [imgViewLeft setContentMode:UIViewContentModeCenter];
+    
+    return imgViewLeft;
+}
 @end
