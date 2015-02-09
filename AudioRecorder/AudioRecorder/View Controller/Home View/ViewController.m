@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "IosAudioController.h"
+#import "AudioRecorderViewController.h"
+
 #import <FacebookSDK/FacebookSDK.h>
 
 @interface ViewController ()
@@ -22,6 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self setUI];
 }
 
@@ -37,17 +40,9 @@
     [txtFirstName setLeftView: [self leftViewForTextFieldWithImage:@"username"]];
     
     [txtLastName setLeftViewMode:UITextFieldViewModeAlways];
-    [txtLastName setLeftView: [self leftViewForTextFieldWithImage:@"lock_white"]];
-    
-//    [btnLogin setBackgroundColor:[_DPFunctions colorWithR:36 g:164 b:193 alpha:1.0f]];
-//    [btnLogin.layer setCornerRadius:3.0f];
-//    
-//    [btnSignUp setBackgroundColor:[_DPFunctions colorWithR:49 g:190 b:218 alpha:1.0f]];
-//    [btnSignUp.layer setCornerRadius:3.0f];
-//    [btnSignUp.layer setBorderColor:[UIColor colorWithWhite:0.9f alpha:0.8f].CGColor];
-//    [btnSignUp.layer setBorderWidth:1.0f];
-
+    [txtLastName setLeftView: [self leftViewForTextFieldWithImage:@"lock_white"]];    
 }
+
 #pragma mark - IBAction methods
 - (IBAction)btnStartAction:(id)sender {
     [iosAudio start];
@@ -76,6 +71,11 @@
              }
          }];
     }
+}
+- (IBAction)btnNextAction:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AudioRecorderViewController *objAudioRecorderViewController = (AudioRecorderViewController*) [storyboard instantiateViewControllerWithIdentifier:@"AudioRecorderViewControllerIdentifier"];
+    [self.navigationController pushViewController:objAudioRecorderViewController animated:YES];
 }
 
 #pragma mark - User defined methods
