@@ -33,7 +33,6 @@
 #pragma mark - User defined methods
 -(void)setUI
 {
-    
     [txtFirstName setLeftViewMode:UITextFieldViewModeAlways];
     [txtFirstName setLeftView: [self leftViewForTextFieldWithImage:@"username"]];
     
@@ -128,7 +127,6 @@
 -(void)updateView:(NSMutableDictionary*)dictData {
     txtFirstName.text = [dictData valueForKey:@"first_name"];
     txtLastName.text = [dictData valueForKey:@"last_name"];
-    txtEmailAddress.text = [dictData valueForKey:@"email"];
 }
 
 //Show the alert

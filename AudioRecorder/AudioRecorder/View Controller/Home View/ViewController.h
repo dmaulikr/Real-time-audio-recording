@@ -12,9 +12,7 @@
 
 {
     __weak IBOutlet UITextField *txtFirstName;
-    __weak IBOutlet UITextField *txtLastName;
-    __weak IBOutlet UITextField *txtEmailAddress;
-    
+    __weak IBOutlet UITextField *txtLastName;    
 }
 
 @end
