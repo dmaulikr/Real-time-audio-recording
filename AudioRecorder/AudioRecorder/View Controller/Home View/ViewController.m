@@ -40,6 +40,8 @@
     
     [txtLastName setLeftViewMode:UITextFieldViewModeAlways];
     [txtLastName setLeftView: [self leftViewForTextFieldWithImage:@"lock_white"]];
+    
+    ConstraintTopSpaceOfSpeakButton.constant = 338;
 }
 
 #pragma mark - IBAction methods
@@ -123,9 +125,10 @@
                       delay:0.0f
                     options:UIViewAnimationOptionCurveLinear
                  animations:^{
-                         [btnNext setFrame:CGRectMake(btnNext.frame.origin.x, 230, btnNext.frame.size.width, btnNext.frame.size.height)];                     
-                 }completion:nil];
-
+                     ConstraintTopSpaceOfSpeakButton.constant = 38;
+                     [btnNext layoutIfNeeded];                     
+                 }completion:^(BOOL finished){
+                 }];
 }
 
 //Show the alert

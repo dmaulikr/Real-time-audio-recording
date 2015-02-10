@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AudioRecorder/View Controller/Home View/ViewController.m"
-            timestampString = "445236587.18323"
+            timestampString = "445240994.186543"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "-getUserFacebookBasicInfo"
             landmarkType = "5">
          </BreakpointContent>

@@ -11,10 +11,12 @@
 @interface ViewController : UIViewController
 
 {
+    __weak IBOutlet UIView *vwMain;
     __weak IBOutlet UITextField *txtFirstName;
-    __weak IBOutlet UITextField *txtLastName;    
+    __weak IBOutlet UITextField *txtLastName;
     __weak IBOutlet UIButton *btnNext;
     __weak IBOutlet UIImageView *imgProfile;
+    __weak IBOutlet NSLayoutConstraint *ConstraintTopSpaceOfSpeakButton;
 }
 
 @end
