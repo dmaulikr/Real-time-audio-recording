@@ -41,7 +41,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" minimumFontSize="17" background="txtFieldBack.png" id="pNH-61-SZ2">
-                                        <rect key="frame" x="20" y="40" width="280" height="36"/>
+                                        <rect key="frame" x="20" y="100" width="280" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -49,39 +49,15 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" minimumFontSize="17" background="txtFieldBack.png" id="ZZQ-1D-4Sp">
-                                        <rect key="frame" x="20" y="96" width="280" height="36"/>
+                                        <rect key="frame" x="20" y="156" width="280" height="36"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6CF-7y-mrY">
-                                        <rect key="frame" x="0.0" y="318" width="140" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="Speak Here">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnStartAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ntq-er-sJB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="m70-hq-hQA">
-                                        <rect key="frame" x="0.0" y="369" width="140" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="Stop Speaking">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnStopAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7tO-iF-kPz"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LaT-bw-2Yd">
-                                        <rect key="frame" x="34" y="190" width="251" height="60"/>
+                                        <rect key="frame" x="34" y="230" width="251" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="30" maxY="0.0"/>
@@ -94,6 +70,10 @@
                                             <action selector="btnNextAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sxW-zr-Tm7"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank_img.png" id="rUf-J1-fEQ">
+                                        <rect key="frame" x="117" y="0.0" width="84" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -107,6 +87,8 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="btnNext" destination="LaT-bw-2Yd" id="Npk-JX-O3b"/>
+                        <outlet property="imgProfile" destination="rUf-J1-fEQ" id="bgD-fS-sUY"/>
                         <outlet property="txtFirstName" destination="pNH-61-SZ2" id="L2O-LW-4p5"/>
                         <outlet property="txtLastName" destination="ZZQ-1D-4Sp" id="TA8-2t-02e"/>
                     </connections>
@@ -123,23 +105,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C3K-ls-dql">
-                                <rect key="frame" x="35" y="240" width="250" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <state key="normal" title="Speak Here">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2nb-46-MpH">
-                                <rect key="frame" x="35" y="288" width="250" height="40"/>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2nb-46-MpH">
+                                <rect key="frame" x="35" y="302" width="250" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                 <state key="normal" title="Stop Speaking">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnStopSpeakingAction:" destination="mDd-Qz-BAf" eventType="touchUpInside" id="Qfz-ja-dKG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="C3K-ls-dql">
+                                <rect key="frame" x="35" y="225" width="250" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Speak Here">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnSpeakHereAction:" destination="mDd-Qz-BAf" eventType="touchUpInside" id="gdP-ck-ggw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.19215686274509805" green="0.74509803921568629" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -180,6 +168,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="blank_img.png" width="84" height="75"/>
         <image name="btn_facebook.png" width="140" height="40"/>
         <image name="forwardArrow_red.png" width="15" height="25"/>
         <image name="txtFieldBack.png" width="504" height="72"/>

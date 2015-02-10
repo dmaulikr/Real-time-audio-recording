@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "IosAudioController.h"
 #import "AudioRecorderViewController.h"
 
 #import <FacebookSDK/FacebookSDK.h>
@@ -40,18 +39,10 @@
     [txtFirstName setLeftView: [self leftViewForTextFieldWithImage:@"username"]];
     
     [txtLastName setLeftViewMode:UITextFieldViewModeAlways];
-    [txtLastName setLeftView: [self leftViewForTextFieldWithImage:@"lock_white"]];    
+    [txtLastName setLeftView: [self leftViewForTextFieldWithImage:@"lock_white"]];
 }
 
 #pragma mark - IBAction methods
-- (IBAction)btnStartAction:(id)sender {
-    [iosAudio start];
-}
-
-- (IBAction)btnStopAction:(id)sender {
-    [iosAudio stop];
-}
-
 - (IBAction)btnFacebookAction:(id)sender {
     if (FBSession.activeSession.state == FBSessionStateOpen
         || FBSession.activeSession.state == FBSessionStateOpenTokenExtended)
@@ -127,6 +118,7 @@
 -(void)updateView:(NSMutableDictionary*)dictData {
     txtFirstName.text = [dictData valueForKey:@"first_name"];
     txtLastName.text = [dictData valueForKey:@"last_name"];
+    [btnNext setEnabled:YES];
 }
 
 //Show the alert
