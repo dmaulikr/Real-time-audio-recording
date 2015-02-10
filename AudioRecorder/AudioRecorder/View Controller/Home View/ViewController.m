@@ -49,8 +49,8 @@
     {
         [self getUserFacebookBasicInfo];
     }
-    else {
-        [FBSession openActiveSessionWithPublishPermissions:@[@"public_profile", @"email"]
+    else {//,@"user_about_me"
+        [FBSession openActiveSessionWithPublishPermissions:@[@"public_profile"]
                                            defaultAudience:FBSessionDefaultAudienceFriends
                                               allowLoginUI:YES
                                          completionHandler:
@@ -118,7 +118,14 @@
 -(void)updateView:(NSMutableDictionary*)dictData {
     txtFirstName.text = [dictData valueForKey:@"first_name"];
     txtLastName.text = [dictData valueForKey:@"last_name"];
-    [btnNext setEnabled:YES];
+
+[UIView animateWithDuration:1.0f
+                      delay:0.0f
+                    options:UIViewAnimationOptionCurveLinear
+                 animations:^{
+                         [btnNext setFrame:CGRectMake(btnNext.frame.origin.x, 230, btnNext.frame.size.width, btnNext.frame.size.height)];                     
+                 }completion:nil];
+
 }
 
 //Show the alert
